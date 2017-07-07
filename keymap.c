@@ -38,52 +38,54 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 * | EQUAL      | 1          | 2          | 3          | 4          | 5          | LEFT       |               | RIGHT      | 6          | 7          | 8          | 9          | 0          | MINUS      |              
 * |            |            |            |            |            |            |            |               |            |            |            |            |            |            |            |              
 * /-----------//-----------//-----------//-----------//-----------//-----------//-----------/                /-----------//-----------//-----------//-----------//-----------//-----------//-----------/               
-* | DELETE     | Q          | W          | E          | R          | T          | 1          |               | 1          | Y          | U          | I          | O          | P          | BSLASH     |              
+* | TAB        | Q          | W          | E          | R          | T          | SYMB       |               | SYMB       | Y          | U          | I          | O          | P          | BSLASH     |
 * |            |            |            |            |            |            |            |               |            |            |            |            |            |            |            |              
-* /-----------//-----------//-----------//-----------//-----------//-----------/\-----------\                \-----------\/-----------//-----------//-----------//-----------//-----------//-----------/               
-* | BSPACE     | A          | S          | D          | F          | G          |                                         | H          | J          | K          | L          | SCOLON     | 'E         |              
-* |            |            |            |            |            |            |                                         |            |            |            |            | 2          | CMD        |              
-* /-----------//-----------//-----------//-----------//-----------//-----------//-----------/                /-----------//-----------//-----------//-----------//-----------//-----------//-----------/               
-* | Shift      | Z          | X          | C          | V          | B          | NO         |               | NO         | N          | M          | ,          | .          | /          | Shift      |              
-* |            | Ctrl       |            |            |            |            | Hyper      |               | Meh        |            |            |            |            | Ctrl       |            |              
+* /-----------//-----------//-----------//-----------//-----------//-----------/\            |               |            /-----------//-----------//-----------//-----------//-----------//-----------/
+* | SYMB       | A          | S          | D          | F          | G          |            |               |            | H          | J          | K          | L          | Ö          | Ä          |
+* |            |            |            |            |            |            |----------- /               /------------|            |            |            |            | MOUSE      | CMD        |
+* /-----------//-----------//-----------//-----------//-----------//-----------//            |               |            /-----------//-----------//-----------//-----------//-----------//------------/
+* | Shift      | Z          | X          | C          | V          | B          | BSPACE     |               | NO         | N          | M          | ,          | .          | /          | Shift      |
+* |            | Ctrl       |            |            |            |            |            |               | Meh        |            |            |            |            | Ctrl       |            |
 * \-----------\\-----------\\-----------\\-----------\\-----------\\-----------\\-----------\                \-----------\\-----------\\-----------\\-----------\\-----------\\-----------\\-----------\               
 *                                                                                                                                                                                                                      
 *                                                                                                                                                                                                                      
-*                           /-----------//-----------//-----------//-----------//-----------/                                                       /-----------//-----------//-----------//-----------//-----------/  
-*                           | GRAVE      | 'E         | ALT+Shift  | LEFT       | RIGHT      |                                                      | UP         | DOWN       | LBRACKET   | RBRACKET   | 1          | 
-*                           | 1          |            |            |            |            |                                                      |            |            |            |            |            | 
-*                           \-----------\\-----------\\-----------\\-----------\/-----------//-----------/   /-----------//-----------/             \-----------\\-----------\\-----------\\-----------\\-----------\  
-*                                                                               | APPLICATION| HOME       |  | Alt        | ESCAPE     |                                                                               
-*                                                                               | ALT        |            |  |            | Ctrl       |                                                                               
-*                                                                               \-----------\/-----------/   /-----------/\-----------\                                                                                
-*                                                                                            | END        |  | PGUP       |                                                                                            
-*                                                                                            |            |  |            |                                                                                            
-*                                                                  /-----------//-----------//-----------/   /-----------//-----------//-----------/                                                                   
-*                                                                  | SPACE      | CMD        | ENTER      |  | TAB        | Cmd        | SPACE      |
-*                                                                  |            |            |            |  |            |            |            |                                                                  
-*                                                                  \-----------\\-----------\\-----------\   \-----------\\-----------\\-----------\                                                                   
+* /-----------//-----------//-----------//-----------//-----------/                                                                     /-----------//-----------//-----------//-----------//-----------/
+* | GRAVE      | 'E         | ALT+Shift  | LEFT       | RIGHT      |                                                                    | UP         | DOWN       | LBRACKET   | RBRACKET   | 1          |
+* | MOUSE      |            |            |            |            |                                                                    |            |            |            |            |            |
+* \-----------\\-----------\\-----------\\-----------\/-----------/ /-----------//-----------/                /-----------/\-----------\\-----------\\-----------\\-----------\\-----------\\-----------/
+*                                                                   | APPLICATION| HOME       |               | Alt        | ESCAPE     |
+*                                                                   | ALT        |            |               |            | Ctrl       |
+*                                                                   \-----------\/-----------/                /-----------/\-----------\
+*                                                                                | END         |               | PGUP       |
+*                                                                                |            |               |            |
+*                                                      /-----------//-----------//-----------/                /-----------//-----------//-----------/
+*                                                      | SPACE      | CMD        | ENTER      |               | TAB        | Cmd        | SPACE      |
+*                                                      |            |            |            |               |            |            |            |
+*                                                      \-----------\\-----------\\-----------\                \-----------\\-----------\\-----------\
 *                                                                                                                                                                                                                      
 * 
 **/
 [BASE]=KEYMAP(
 //left half
-    KC_EQUAL, KC_1, KC_2, KC_3, KC_4, KC_5, KC_LEFT, 
-    KC_DELETE, KC_Q, KC_W, KC_E, KC_R, KC_T, TG(SYMB),
-    KC_BSPACE, KC_A, KC_S, KC_D, KC_F, KC_G, 
-    KC_LSHIFT, CTL_T(KC_Z), KC_X, KC_C, KC_V, KC_B, ALL_T(KC_NO), 
-                  LT(SYMB,KC_GRAVE), KC_QUOTE, LALT(KC_LSHIFT), KC_LEFT, KC_RIGHT,
-                                              ALT_T(KC_APPLICATION), KC_HOME, 
-                                                     KC_END, 
-                                       KC_SPACE, KC_LGUI, KC_ENTER,
+    KC_EQUAL,               KC_1,               KC_2,               KC_3,               KC_4,               KC_5,           KC_LEFT,
+    KC_TAB,                 KC_Q,               KC_W,               KC_E,               KC_R,               KC_T,           TG(SYMB),
+    MO(SYMB),               KC_A,               KC_S,               KC_D,               KC_F,               KC_G,
+    KC_LSHIFT,              CTL_T(KC_Z),        KC_X,               KC_C,               KC_V,               KC_B,           KC_BSPACE,
+
+    LT(MOUSE,KC_GRAVE),     KC_QUOTE,           LALT(KC_LSHIFT),    KC_LEFT,            KC_RIGHT,
+
+                                                                                                    ALT_T(KC_APPLICATION),  KC_HOME,
+                                                                                                                            KC_END,
+                                                                                        KC_SPACE,           KC_LGUI,        KC_ENTER,
     //right half
-    KC_RIGHT, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINUS, 
-    TG(SYMB), KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSLASH,
-           KC_H, KC_J, KC_K, KC_L, LT(MOUSE,KC_SCOLON), GUI_T(KC_QUOTE),
-    MEH_T(KC_NO), KC_N, KC_M, KC_COMMA, KC_DOT, CTL_T(KC_SLASH), KC_RSHIFT, 
-                         KC_UP, KC_DOWN, KC_LBRACKET, KC_RBRACKET, MO(SYMB),
-    KC_LALT, CTL_T(KC_ESCAPE), 
+    KC_RIGHT,               KC_6,               KC_7,               KC_8,               KC_9,               KC_0,           KC_MINUS,
+    TG(SYMB),               KC_Y,               KC_U,               KC_I,               KC_O,               KC_P,           KC_BSLASH,
+                            KC_H,               KC_J,               KC_K,               KC_L,               LT(MOUSE,KC_SCOLON),GUI_T(KC_QUOTE),
+    KC_NO,                  KC_N,               KC_M,               KC_COMMA,           KC_DOT,             CTL_T(KC_SLASH),KC_RSHIFT,
+                            KC_UP,              KC_DOWN,            KC_LBRACKET,        KC_RBRACKET,        MO(SYMB),
+    KC_LALT,                CTL_T(KC_ESCAPE),
     KC_PGUP, 
-    KC_TAB, KC_LGUI, KC_SPACE),
+    KC_TAB,                 KC_LGUI,            KC_SPACE),
 /**
 * Layer: 1
 * /-----------//-----------//-----------//-----------//-----------//-----------//-----------/                /-----------//-----------//-----------//-----------//-----------//-----------//-----------/               
@@ -101,41 +103,43 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 * \-----------\\-----------\\-----------\\-----------\\-----------\\-----------\\-----------\                \-----------\\-----------\\-----------\\-----------\\-----------\\-----------\\-----------\               
 *                                                                                                                                                                                                                      
 *                                                                                                                                                                                                                      
-*                           /-----------//-----------//-----------//-----------//-----------/                                                       /-----------//-----------//-----------//-----------//-----------/  
-*                           | TRANSPARENT| TRANSPARENT| TRANSPARENT| TRANSPARENT| TRANSPARENT|                                                      | TRANSPARENT| .          | 0          | EQUAL      | TRANSPARENT| 
-*                           |            |            |            |            |            |                                                      |            |            |            |            |            | 
-*                           \-----------\\-----------\\-----------\\-----------\/-----------//-----------/   /-----------//-----------/             \-----------\\-----------\\-----------\\-----------\\-----------\  
-*                                                                               | invalid    | TRANSPARENT|  | invalid    | invalid    |                                                                               
-*                                                                               |            |            |  |            |            |                                                                               
-*                                                                               \-----------\/-----------/   /-----------/\-----------\                                                                                
-*                                                                                            | TRANSPARENT|  | TRANSPARENT|                                                                                            
-*                                                                                            |            |  |            |                                                                                            
-*                                                                  /-----------//-----------//-----------/   /-----------//-----------//-----------/                                                                   
-*                                                                  | invalid    | invalid    | TRANSPARENT|  | TRANSPARENT| invalid    | invalid    |                                                                  
-*                                                                  |            |            |            |  |            |            |            |                                                                  
-*                                                                  \-----------\\-----------\\-----------\   \-----------\\-----------\\-----------\                                                                   
+* /-----------//-----------//-----------//-----------//-----------/                                                                     /-----------//-----------//-----------//-----------//-----------/
+* | TRANSPARENT| TRANSPARENT| TRANSPARENT| TRANSPARENT| TRANSPARENT|                                                                    | TRANSPARENT| .          | 0          | EQUAL      | TRANSPARENT|
+* |            |            |            |            |            |                                                                    |            |            |            |            |            |
+* \-----------\\-----------\\-----------\\-----------\/------------//-----------//-----------/                 /-----------//-----------/\-----------\\-----------\\-----------\\-----------\\-----------\
+*                                                                  | invalid    | TRANSPARENT|                | invalid    | invalid    |
+*                                                                  |            |            |                |            |            |
+*                                                                  \-----------\/-----------/                 /-----------/\-----------\
+*                                                                               | TRANSPARENT|                | TRANSPARENT|
+*                                                                               |            |                |            |
+*                                                     /-----------//-----------//-----------/                 /-----------//-----------//-----------/
+*                                                     | TRANSPARENT| TRANSPARENT| TRANSPARENT|                | TRANSPARENT| TRANSPARENT| TRANSPARENT|
+*                                                     |            |            |            |                |            |            |            |
+*                                                     \-----------\\-----------\\-----------\                 \-----------\\-----------\\-----------\
 *                                                                                                                                                                                                                      
 * 
 **/
 [SYMB]=KEYMAP(
 //left half
-    KC_ESCAPE, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_EXLM, KC_AT, KC_LCBR, KC_RCBR, KC_PIPE, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_HASH, KC_DLR, KC_LPRN, KC_RPRN, KC_GRAVE, 
-    KC_TRANSPARENT, KC_PERC, KC_CIRC, KC_LBRACKET, KC_RBRACKET, KC_TILD, KC_TRANSPARENT, 
-                  KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-                                              RGB_MOD, KC_TRANSPARENT, 
-                                                     KC_TRANSPARENT, 
-                                       RGB_VAD, RGB_VAI, KC_TRANSPARENT, 
+    KC_ESCAPE,              KC_F1,              KC_F2,              KC_F3,              KC_F4,              KC_F5,              KC_TRANSPARENT,
+    KC_TRANSPARENT,         KC_EXLM,            KC_AT,              KC_LCBR,            KC_RCBR,            KC_PIPE,            KC_TRANSPARENT,
+    KC_TRANSPARENT,         KC_HASH,            KC_DLR,             KC_LPRN,            KC_RPRN,            KC_GRAVE,
+    KC_TRANSPARENT,         KC_PERC,            KC_CIRC,            KC_LBRACKET,        KC_RBRACKET,        KC_TILD,            KC_TRANSPARENT,
+
+    KC_TRANSPARENT,         KC_TRANSPARENT,     KC_TRANSPARENT,     KC_TRANSPARENT,     KC_TRANSPARENT,
+                                                                                                            RGB_MOD,            KC_TRANSPARENT,
+                                                                                                                                KC_TRANSPARENT,
+                                                                                        KC_TRANSPARENT,     KC_TRANSPARENT,     KC_TRANSPARENT,
     //right half
-    KC_TRANSPARENT, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, 
-    KC_TRANSPARENT, KC_UP, KC_7, KC_8, KC_9, KC_ASTR, KC_F12, 
-           KC_DOWN, KC_4, KC_5, KC_6, KC_PLUS, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_AMPR, KC_1, KC_2, KC_3, KC_BSLASH, KC_TRANSPARENT, 
-                         KC_TRANSPARENT, KC_DOT, KC_0, KC_EQUAL, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT),
+    KC_TRANSPARENT,         KC_F6,              KC_F7,              KC_F8,              KC_F9,              KC_F10,             KC_F11,
+    KC_TRANSPARENT,         KC_UP,              KC_7,               KC_8,               KC_9,               KC_ASTR,            KC_F12,
+                            KC_DOWN,            KC_4,               KC_5,               KC_6,               KC_PLUS,            KC_TRANSPARENT,
+    KC_TRANSPARENT,         KC_AMPR,            KC_1,               KC_2,               KC_3,               KC_BSLASH,          KC_TRANSPARENT,
+
+                                                KC_TRANSPARENT,     KC_DOT,             KC_0,               KC_EQUAL,           KC_TRANSPARENT,
+    KC_TRANSPARENT,         KC_TRANSPARENT,
+    KC_TRANSPARENT,
+    KC_TRANSPARENT,         KC_TRANSPARENT, KC_TRANSPARENT),
 /**
 * Layer: 2
 * /-----------//-----------//-----------//-----------//-----------//-----------//-----------/                /-----------//-----------//-----------//-----------//-----------//-----------//-----------/               
