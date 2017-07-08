@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 * |            |            |            |            |            |            |            |               |            |            |            |            |            |            |            |              
 * /-----------//-----------//-----------//-----------//-----------//-----------/\            |               |            /-----------//-----------//-----------//-----------//-----------//-----------/
 * | SYMB       | A          | S          | D          | F          | G          |            |               |            | H          | J          | K          | L          | Ö          | Ä          |
-* |            |            |            |            |            |            |----------- /               /------------|            |            |            |            | MOUSE      | SYMB       |
+* |            | MOUSE      |            |            |            |            |----------- /               /------------|            |            |            |            | MOUSE      | SYMB       |
 * /-----------//-----------//-----------//-----------//-----------//-----------//            |               |            /-----------//-----------//-----------//-----------//-----------//------------/
 * | Shift      | Y          | X          | C          | V          | B          | BSPACE     |               | DEL        | N          | M          | ,          | .          | /          | Shift      |
 * |            | Ctrl       |            |            |            |            |            |               |            |            |            |            |            | Ctrl       |            |
@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *                                                                                                                                                                                                                      
 *                                                                                                                                                                                                                      
 * /-----------//-----------//-----------//-----------//-----------/                                                                     /-----------//-----------//-----------//-----------//-----------/
-* | GRAVE      | 'E         | ALT+Shift  | LEFT       | RIGHT      |                                                                    | UP         | DOWN       | LBRACKET   | RBRACKET   | SYMB       |
+* | GRAVE      | < >        | ALT+Shift  | LEFT       | RIGHT      |                                                                    | UP         | DOWN       | LBRACKET   | RBRACKET   | SYMB       |
 * | MOUSE      |            |            |            |            |                                                                    |            |            |            |            |            |
 * \-----------\\-----------\\-----------\\-----------\/-----------/ /-----------//-----------/                /-----------/\-----------\\-----------\\-----------\\-----------\\-----------\\-----------/
 *                                                                   | APPLICATION| HOME       |               | Alt        | ESCAPE     |
@@ -64,9 +64,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESCAPE,              KC_1,               KC_2,               KC_3,               KC_4,               KC_5,           KC_EQUAL,
     KC_TAB,                 KC_Q,               KC_W,               KC_E,               KC_R,               KC_T,           TG(SYMB),
     MO(SYMB),               LT(MOUSE,KC_A),     KC_S,               KC_D,               KC_F,               KC_G,
-    KC_LSHIFT,              CTL_T(DE_OSX_Y), KC_X,               KC_C,               KC_V,               KC_B,           KC_BSPACE,
+    KC_LSHIFT,              CTL_T(DE_OSX_Y),    KC_X,               KC_C,               KC_V,               KC_B,           KC_BSPACE,
 
-    LT(MOUSE,KC_GRAVE),     KC_QUOTE,           LALT(KC_LSHIFT),    KC_LEFT,            KC_RIGHT,
+    LT(MOUSE,KC_GRAVE),     DE_LESS,         LALT(KC_LSHIFT),    KC_LEFT,            KC_RIGHT,
 
                                                                                                     ALT_T(KC_APPLICATION),  KC_HOME,
                                                                                                                             KC_END,
@@ -126,8 +126,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                         KC_TRANSPARENT,     KC_TRANSPARENT,     KC_TRANSPARENT,
     //right half
     KC_TRANSPARENT,         KC_F6,              KC_F7,              KC_F8,              KC_F9,              KC_F10,             KC_F11,
-    KC_TRANSPARENT,         KC_UP,              KC_7,               KC_8,               KC_9,               KC_ASTR,            KC_F12,
-                            KC_DOWN,            KC_4,               KC_5,               KC_6,               KC_PLUS,            KC_TRANSPARENT,
+    KC_TRANSPARENT,         KC_UP,              KC_7,               KC_8,               KC_9,               DE_OSX_ASTR,            KC_F12,
+                            KC_DOWN,            KC_4,               KC_5,               KC_6,               DE_OSX_PLUS,            KC_TRANSPARENT,
     KC_TRANSPARENT,         DE_OSX_EURO,        KC_1,               KC_2,               KC_3,               KC_BSLASH,          KC_TRANSPARENT,
 
                                                 KC_TRANSPARENT,     KC_DOT,             KC_0,               KC_EQUAL,           KC_TRANSPARENT,
@@ -187,7 +187,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                 KC_AUDIO_VOL_UP,    KC_AUDIO_VOL_DOWN,  KC_AUDIO_MUTE,      KC_MEDIA_PLAY_PAUSE,KC_TRANSPARENT,
     KC_TRANSPARENT,         KC_TRANSPARENT,
     KC_TRANSPARENT,
-    KC_TRANSPARENT,         KC_TRANSPARENT,     KC_WWW_BACK),
+    KC_TRANSPARENT,         KC_BSPACE,          KC_ENTER),
 };
 
 const uint16_t PROGMEM fn_actions[] = {
