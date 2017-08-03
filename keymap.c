@@ -21,7 +21,7 @@
 #define BASE 0
 #define SYMB 1
 #define MOUSE 2
-#define NUMB 3
+#define NUM 3
     //macro name is number 0
 
 //Layout keymap.c generated with ErgodoxLayoutGenerator V1.0BETA1
@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 * |            |            |            | MOUSE      | SYMB       |            |----------- /               /------------|            | SYMB       | MOUSE      |            |            |            |
 * /-----------//-----------//-----------//-----------//-----------//-----------//            |               |            /-----------//-----------//-----------//-----------//-----------//------------/
 * | Shift      | Y          | X          | C          | V          | B          | BSPACE     |               | DEL        | N          | M          | ,          | .          | /          | Shift      |
-* |            | Ctrl       |            |            | NUMB       |            |            |               |            |            | NUMB       |            |            | Ctrl       |            |
+* |            | Ctrl       |            |            | NUM        |            |            |               |            |            | NUM        |            |            | Ctrl       |            |
 * \-----------\\-----------\\-----------\\-----------\\-----------\\-----------\\-----------\                \-----------\\-----------\\-----------\\-----------\\-----------\\-----------\\-----------\
 *
 *
@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESCAPE,              KC_1,               KC_2,               KC_3,               KC_4,               KC_5,           KC_EQUAL,
     KC_TAB,                 KC_Q,               KC_W,               KC_E,               KC_R,               KC_T,           TG(SYMB),
     KC_LSHIFT,              KC_A,               KC_S,               LT(MOUSE,KC_D),     LT(SYMB,KC_F),      KC_G,
-    KC_LSHIFT,              CTL_T(DE_OSX_Y),    KC_X,               KC_C,               LT(NUMB,KC_V),      KC_B,           KC_BSPACE,
+    KC_LSHIFT,              CTL_T(DE_OSX_Y),    KC_X,               KC_C,               LT(NUM,KC_V),       KC_B,           KC_BSPACE,
 
     LT(MOUSE,KC_GRAVE),     DE_LESS,         LALT(KC_LSHIFT),    KC_LEFT,            KC_RIGHT,
 
@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_RIGHT,               KC_6,               KC_7,               KC_8,               KC_9,               KC_0,           DE_SS,
     TG(SYMB),               DE_Z,               KC_U,               KC_I,               KC_O,               KC_P,           DE_UE,
                             KC_H,               LT(SYMB,KC_J),      LT(MOUSE,KC_K),     KC_L,               DE_OE,          DE_AE,
-    KC_DEL,                 KC_N,               LT(NUMB,KC_M),      KC_COMMA,           KC_DOT,             CTL_T(KC_SLASH),KC_RSHIFT,
+    KC_DEL,                 KC_N,               LT(NUM,KC_M),       KC_COMMA,           KC_DOT,             CTL_T(KC_SLASH),KC_RSHIFT,
                             KC_DOWN,            KC_UP,              KC_LBRACKET,        KC_RBRACKET,        MO(SYMB),
     KC_LALT,                CTL_T(KC_ESCAPE),
     KC_PGUP,
@@ -196,13 +196,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 * | ESCAPE     | F1         | F2         | F3         | F4         | F5         |            |               |            | F6         | F7         | F8         | F9         | F10        | F11        |
 * |            |            |            |            |            |            |            |               |            |            |            |            |            |            |            |
 * /-----------//-----------//-----------//-----------//-----------//-----------//-----------/                /-----------//-----------//-----------//-----------//-----------//-----------//-----------/
-* |            |            | F1         | F2         | F3         | F4         |            |               |            | '          | 7          | 8          | 9          | *          | ` ´        |
+* |            | F1         | F2         | F3         | F4         |            |            |               |            | '          | 7          | 8          | 9          | *          | ` ´        |
 * |            |            |            |            |            |            |            |               |            |            |            |            |            |            |            |
 * /-----------//-----------//-----------//-----------//-----------//-----------/\-----------\                \-----------\/-----------//-----------//-----------//-----------//-----------//-----------/
-* |            |            | F5         | F6         | F7         | F8         |                                         | < >        | 4          | 5          | 6          | +          |            |
-* |            |            |            |            |            |            |                                         |            |            |            |            |            |            |
+* |            | F5         | F6         | F7         | F8         |            |            |               | < >        | 4          | 5          | 6          | +          |            |
+* |            |            |            |            |            |            |            |               |            |            |            |            |            |            |
 * /-----------//-----------//-----------//-----------//-----------//-----------//-----------/                /-----------//-----------//-----------//-----------//-----------//-----------//-----------/
-* |            |            | F9         | F10        | F11        | F12        |            |               |            | €          | 1          | 2          | 3          |            |            |
+* |            | F9         | F10        | F11        | F12        |            |            |               |            | €          | 1          | 2          | 3          |            |            |
 * |            |            |            |            |            |            |            |               |            |            |            |            |            |            |            |
 * \-----------\\-----------\\-----------\\-----------\\-----------\\-----------\\-----------\                \-----------\\-----------\\-----------\\-----------\\-----------\\-----------\\-----------\
 *
@@ -223,12 +223,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *
 *
 **/
-[NUMB]=KEYMAP(
+[NUM]=KEYMAP(
 //left half
     KC_ESCAPE,              KC_F1,              KC_F2,              KC_F3,              KC_F4,              KC_F5,              KC_TRANSPARENT,
-    KC_TRANSPARENT,         KC_TRANSPARENT,     KC_F1,              KC_F2,              KC_F3,              KC_F4,              KC_TRANSPARENT,
-    KC_TRANSPARENT,         KC_TRANSPARENT,     KC_F5,              KC_F6,              KC_F7,              KC_F8,
-    KC_TRANSPARENT,         KC_TRANSPARENT,     KC_F9,              KC_F10,             KC_F11,             KC_F12,             KC_TRANSPARENT,
+    KC_TRANSPARENT,         KC_F1,              KC_F2,              KC_F3,              KC_F4,              KC_TRANSPARENT,     KC_TRANSPARENT,
+    KC_TRANSPARENT,         KC_F5,              KC_F6,              KC_F7,              KC_F8,              KC_TRANSPARENT,
+    KC_TRANSPARENT,         KC_F9,              KC_F10,             KC_F11,             KC_F12,             KC_TRANSPARENT,     KC_TRANSPARENT,
 
     KC_TRANSPARENT,         KC_TRANSPARENT,     KC_TRANSPARENT,     KC_TRANSPARENT,     KC_TRANSPARENT,
                                                                                                             KC_TRANSPARENT,     KC_TRANSPARENT,
@@ -240,7 +240,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             DE_LESS,            KC_4,               KC_5,               KC_6,               DE_OSX_PLUS,        KC_TRANSPARENT,
     KC_TRANSPARENT,         DE_OSX_EURO,        KC_1,               KC_2,               KC_3,               KC_TRANSPARENT,     KC_TRANSPARENT,
 
-                                                KC_TRANSPARENT,     KC_0,               KC_0,               KC_COMMA,           KC_TRANSPARENT,
+                                                KC_0,               KC_0,               KC_COMMA,           KC_TRANSPARENT,     KC_TRANSPARENT,
     KC_TRANSPARENT,         KC_TRANSPARENT,
     KC_TRANSPARENT,
     KC_TRANSPARENT,         KC_TRANSPARENT, KC_TRANSPARENT),
